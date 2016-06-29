@@ -1,6 +1,6 @@
 # OO Design
-Object Oriented Design.
-www.hiredintech.com.
+Object Oriented Design :
+part of idea is from www.hiredintech.com.
 
 Steps:
 1. Use cases and constraints
