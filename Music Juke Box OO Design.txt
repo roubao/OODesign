@@ -1,0 +1,77 @@
+
+A musical juke box
+
+components:
+1. CD player
+2. CD
+3. Display() (length of song, remaining time and playlist)
+
+1. playlist creation(add/delete/shuffle)
+2. CD selector
+3. Track selector
+4. Queuing up a song
+5. Get next song from playlist
+
+a user: Adding, Deleting, Credit information
+
+public class CD {}
+public class CDPlayer {
+	private Playlist p;
+	private CD cd;
+
+	public Playlist getPlaylist() {return p; }
+	public void setPlaylist(Playlist p) { this.p = p; }
+	public CD getCD() { return c; }
+	public void setCD(CD cd) { this.cd = cd; }
+	
+	public CDPlayer(Playlist p) {this.p = p; }
+	public CDPlayer(CD cd, Playlist p) { ... }
+	public CDPlayer(CD cd) { this.cd = cd; }
+	public void playTrack(Song s) { ... }
+	
+}
+
+public class JukeBox {
+	private CDPlayer cdPlayer;
+	private User user;
+	private Set<CD> cdCollection;
+	private TrackSelector ts;
+	
+	public JukeBox(CDPlayer cdPlayer, User user, Set<CD> cdCollection
+		TrackSelector ts) { ... }
+	public Song getCurrentTrack() { return ts.getCurrentSong(); }
+	public void processOneUser (User u) { this.user = u; }
+	
+}
+
+public class Playlist {
+	private Song track;
+	private Queue<Song> queue;
+	
+	public Playlist(Song track, Queue<Song> queue) { .. }
+	public Song getNextTrackToPlay() { return queue; }
+	public void queueUpTrack(Song s) { queue.add(s); }
+}
+
+public class Song {
+	private String SongName;
+	
+}
+
+public class TrackSelector {
+	private Song currentSong;
+	public TrackSelector (Song s) { currentSong = s; }
+	public void setTrack(Song s ) { currentSong = s; }
+	public Song getCurrentSong()  { return currentSong; }
+}
+
+
+public class User {
+	private String name;
+	private long ID:
+	
+	public String getName() { return name; }
+	public void setName (String name) { this.name = name; }
+	public long getID() { return ID; }
+	......
+}

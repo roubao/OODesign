@@ -1,0 +1,44 @@
+
+/*
+*  -- from CC150
+*/
+
+public class Card {
+	public enum Suit {
+		CLUBS(1), SPADES(2), HEARTS(3), DIAMONDS(4);
+		int value;
+		private Suit(int v) { value = v;}
+	}
+	
+	private int card;
+	private Suit suit;
+	
+	public Card(int r, Suit s) {
+		this.card = r;
+		this.suit = s;
+	}
+	
+	public int value() { return card; }
+	public Suit suit() { return suit; }
+
+}
+
+/*
+ -- create a blackjack game: Face cards are ten and Ace is 11
+*/
+
+public class BlackJackCard extends Card {
+	public BlackJackCard (int r, Suit s) { super(r, s); }
+	
+	public int value () {
+		int r = super.value();
+		if (r == 1) return 11; // aces are 11
+		if (r < 10) return r;
+		return 10;
+	}
+	
+	boolean isAce () {
+		return super.value() == 1;
+	}
+
+}
